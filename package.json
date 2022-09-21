@@ -1,0 +1,22 @@
+{
+  "name": "readme_generator",
+  "description": "[How to create a Professional README](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexJCturbo/readme-generator.git"
+  },
+  "author": "Alejandro Jaimes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexJCturbo/readme-generator/issues"
+  },
+  "homepage": "https://github.com/AlexJCturbo/readme-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
