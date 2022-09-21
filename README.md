@@ -1,17 +1,6 @@
-# Professional README Generator Starter Code
+# Professional README Generator
 
-[How to create a Professional README](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
-
-You’ll need to submit a link to the video and add it to the README of your project.
-
-
-
-
-## User Story
-
-AS A developer
-I WANT a README generator
-SO THAT I can quickly create a professional README for a new project
+This project uses JavaScript and Node.js to code a professional README file generator.
 
 ## Acceptance Criteria
 GIVEN a command-line application that accepts user input

@@ -1,4 +1,6 @@
-//README file title
+//Include packages needed for this application
+const bringMarkdown = require('./utils/generateMarkdown.js');
+
 
 
 module.exports = readmeTemplateData => {
