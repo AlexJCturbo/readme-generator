@@ -23,139 +23,157 @@ Please answer the following questions
 	);
 
   return inquirer.prompt([
-      {
-        type: 'input',
-				name: 'name',
-				message: 'Enter the name of your project (required):',
-				validate: nameInput => {
-					if (nameInput) {
-						return true;
-					}else {
-						console.log('Please enter the name of the project:');
-					}
-				}
-      },
-			{
-				type: 'input',
-				name: 'description',
-				message: 'Provide a detailed description of your project (required):',
-				validate: descriptionInput => {
-					if (descriptionInput) {
-						return true;
-					} else {
-						console.log('Please provide a description of your project:');
-					}
-				}
-			},
-			{
-				type: 'confirm',
-				name: 'confirmInstallation',
-				message: 'Does your project have specific installation instructions?',
-				default: true
-			},
-			{
-				type: 'input',
-				name: 'installation',
-				message: 'Enter the installation instructions to run your project:',
-				when: ({confirmInstallation}) => {
-					if (confirmInstallation) {
-						return true;
-					} else {
-						return false;
-					}
-				}
-			},
-			{
-				type: 'confirm',
-				name: 'confirmUsage',
-				message: 'Would you like to describe how to use your project?',
-				default: true
-			},
-			{
-				type: 'input',
-				name: 'usage',
-				message: 'Explain how to use your project:',
-				when: ({confirmUsage}) => {
-					if (confirmUsage) {
-						return true;
-					} else {
-						return false;
-					}
-				}
-			},
-			{
-				type: 'confirm',
-				name: 'confirmContribute',
-				message: 'Would you like to describe how can users make contributions to your project?',
-				default: true
-			},
-			{
-				type: 'input',
-				name: 'contribute',
-				message: 'Provide the guidelines to contribute with the project:',
-				when: ({confirmContribute}) => {
-					if (confirmContribute) {
-						return true;
-					} else {
-						return false;
-					}
-				}
-			},
-			{
-				type: 'confirm',
-				name: 'confirmTestInstructions',
-				message: 'Would you like to provide testing instructions for your project?',
-				default: true
-			},
-			{
-				type: 'input',
-				name: 'testInstructions',
-				message: "Provide the testing instructions for your project:",
-				when: ({confirmTestInstructions}) => {
-					if (confirmTestInstructions) {
-						return true;
-					} else {
-						return false;
-					}
-				}
-			},
-			{
-				type: 'list',
-				name: 'license',
-				message: 'Choose a license for your open-source project.',
-				choices: ['MIT', 'ISC', 'GNU GPLv3', 'Apache License 2.0', 'Mozilla Public License 2.0', 'No License']
-			},
-			{
-				type: 'input',
-				name: 'github',
-				message: 'Enter the GitHub repository of your project (required):',
-				validate: githubInput => {
-					if (githubInput) {
-						return true;
-					} else {
-						console.log('Please enter the GitHub repository of your project:');
-						return false;
-					}
-				}
-			},
-			{
-				type: 'confirm',
-				name: 'confirmEmail',
-				message: 'Would you like to provide an email address to reach you with additional questions?',
-				default: true
-			},
-			{
-				type: 'input',
-				name: 'email',
-				message: 'Please enter your email address:',
-				when: ({confirmEmail}) => {
-					if (confirmEmail) {
-						return true;
-					} else {
-						return false;
-					}
+		{
+			type: 'input',
+			name: 'name',
+			message: 'Enter the name of your project (required):',
+			validate: nameInput => {
+				if (nameInput) {
+					return true;
+				} else {
+					console.log('Please enter the name of the project:');
 				}
 			}
+    },
+		{
+			type: 'input',
+			name: 'description',
+			message: 'Provide a detailed description of your project (required):',
+			validate: descriptionInput => {
+				if (descriptionInput) {
+					return true;
+				} else {
+					console.log('Please provide a description of your project:');
+				}
+			}
+		},
+		{
+			type: 'confirm',
+			name: 'confirmInstallation',
+			message: 'Does your project have specific installation instructions?',
+			default: true
+		},
+		{
+			type: 'input',
+			name: 'installation',
+			message: 'Enter the installation instructions to run your project:',
+			when: ({confirmInstallation}) => {
+				if (confirmInstallation) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+		},
+		{
+			type: 'confirm',
+			name: 'confirmUsage',
+			message: 'Would you like to describe how to use your project?',
+			default: true
+		},
+		{
+			type: 'input',
+			name: 'usage',
+			message: 'Explain how to use your project:',
+			when: ({confirmUsage}) => {
+				if (confirmUsage) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+		},
+		{
+			type: 'confirm',
+			name: 'confirmContribute',
+			message: 'Would you like to describe how can users make contributions to your project?',
+			default: true
+		},
+		{
+			type: 'input',
+			name: 'contribute',
+			message: 'Provide the guidelines to contribute with the project:',
+			when: ({confirmContribute}) => {
+				if (confirmContribute) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+		},
+		{
+			type: 'confirm',
+			name: 'confirmTestInstructions',
+			message: 'Would you like to provide testing instructions for your project?',
+			default: true
+		},
+		{
+			type: 'input',
+			name: 'testInstructions',
+			message: "Provide the testing instructions for your project:",
+			when: ({confirmTestInstructions}) => {
+				if (confirmTestInstructions) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+		},
+		{
+			type: 'list',
+			name: 'license',
+			message: 'Choose a license for your open-source project.',
+			choices: ['MIT', 'ISC', 'GNU GPLv3', 'Apache License 2.0', 'Mozilla Public License 2.0', 'No License']
+		},
+		{
+			type: 'input',
+			name: 'github',
+			message: 'Enter the GitHub repository of your project (required):',
+			validate: githubInput => {
+				if (githubInput) {
+					return true;
+				} else {
+					console.log('Please enter the GitHub repository of your project:');
+					return false;
+				}
+			}
+		},
+		{
+			type: 'confirm',
+			name: 'confirmEmail',
+			message: 'Would you like to provide an email address to reach you with additional questions?',
+			default: true
+		},
+		{
+			type: 'input',
+			name: 'email',
+			message: 'Please enter your email address:',
+			when: ({confirmEmail}) => {
+				if (confirmEmail) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+		},
+		{
+			type: 'confirm',
+			name: 'confirmReference',
+			message: 'Would you like to provide references of your project?',
+			default: true
+		},
+		{
+			type: 'input',
+			name: 'reference',
+			message: 'Please provide your references:',
+			when: ({confirmReference}) => {
+				if (confirmReference) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+		}
   ])
 };
 

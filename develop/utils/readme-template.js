@@ -1,6 +1,5 @@
-//Include packages needed for this application
-
-//const bringMarkdown = require('./generateMarkdown.js');
+//Packages needed for this application
+//const getMarkdown = require('./generateMarkdown.js');
 
 
 //module.exports = response => {
@@ -11,41 +10,54 @@ module.exports = readmeInput => {
 	return `
 # ${name}
 
-## Contents
-- [Description](#Description)
+
+## Table of Contents
+- [Project Description](#Project-Description)
 - [Installation](#Installation)
 - [Usage](#Usage)
-- [Contribute](#Contribute)
-- [Tests ](#Tests)
+- [Contribution Guidelines](#Contribution-Guidelines)
+- [Test Instructions](#Test-Instructions)
 - [Questions](#Questions)
-- [Application Repository](#Application Repository)
+- [Links](#Links)
+- [References](#References)
 - [License](#License)
 
 
-## Description
+## Project Description
 ${description}
+###### [Back to Index](#Table-of-Contents)
 
 ## Installation
 ${installation}
+###### [Back to Table of Contents](#Table-of-Contents)
 
 ## Usage
 ${usage}
+###### [Back to Table of Contents](#Table-of-Contents)
 
-## Contribute
+## Contribution Guidelines
 ${contribute}
+###### [Back to Table of Contents](#Table-of-Contents)
 
-## Tests
+## Test Instructions
 ${testInstructions}
+###### [Back to Table of Contents](#Table-of-Contents)
 
 ## Questions
 ${email}
+###### [Back to Table of Contents](#Table-of-Contents)
 
-## Application Repository
+## Links
 [Application Repository](${github})
+###### [Back to Table of Contents](#Table-of-Contents)
+
+## References
+${reference}
+###### [Back to Table of Contents](#Table-of-Contents)
 
 ## License
 ${license}
-
+###### [Back to Table of Contents](#Table-of-Contents)
   `
 
 /*

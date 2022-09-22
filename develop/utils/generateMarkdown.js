@@ -2,6 +2,7 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {}
 
+
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {}
@@ -23,12 +24,12 @@ module.exports = generateMarkdown;
 
 /*
 const generateBadge = licenseBadge => {
-  const urlMit = '(https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
-  const urlISC = '(https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)';
-  const urlGNU = '(https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
-  const urlApache = '(https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
-  const urlMozilla = '(https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)';
-  const urlUnlicense = '(https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)';
+const urlMit = '(https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
+const urlISC = '(https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)';
+const urlGNU = '(https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
+const urlApache = '(https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
+const urlMozilla = '(https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)';
+const urlUnlicense = '(https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)';
 
   if (licenseBadge === 'MIT')
 

@@ -1,8 +1,17 @@
-# Professional README Generator
+# Professional README File Generator
 
-This project uses JavaScript and Node.js to code a professional README file generator.
+## Description
+This project uses JavaScript and Node.js create an application that generates a professional README file based on the user's input.
+
+## User Story
+```
+AS A developer
+I WANT a README generator
+SO THAT I can quickly create a professional README for a new project
+```
 
 ## Acceptance Criteria
+```
 GIVEN a command-line application that accepts user input
 WHEN I am prompted for information about my application repository
 THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
@@ -18,3 +27,15 @@ WHEN I enter my email address
 THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
 WHEN I click on the links in the Table of Contents
 THEN I am taken to the corresponding section of the README
+```
+
+## Code Description
+This project was coded using Node.js and JavaScript. The code consists pf an index file where the inquirer app is called to prompt all the questions, a readme-template file that holds the template for the README file and a generateMarkdown file that calls the badges for the different license options. The app is initialized with Node.js executing the index file. This file runs the code in a series of functions and promises which concludes writing a README file based on the user's responses.
+
+## Links
+
+- [Deployed Link](https://alexjcturbo.github.io/readme-generator/)
+
+- [GitHub Repository Link](https://github.com/AlexJCturbo/readme-generator)
+
+## Screen Shots
