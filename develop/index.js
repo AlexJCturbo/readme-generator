@@ -63,6 +63,13 @@ Please answer the following questions
 				} else {
 					return false;
 				}
+			},
+			validate: installationInput => {
+				if (installationInput) {
+					return true;
+				} else {
+					console.log('Please enter the installation instructions to run your project:');
+				}
 			}
 		},
 		{
@@ -80,6 +87,13 @@ Please answer the following questions
 					return true;
 				} else {
 					return false;
+				}
+			},
+			validate: usageInput => {
+				if (usageInput) {
+					return true;
+				} else {
+					console.log('Please explain how to use your project:');
 				}
 			}
 		},
@@ -99,6 +113,13 @@ Please answer the following questions
 				} else {
 					return false;
 				}
+			},
+			validate: contributeInput => {
+				if (contributeInput) {
+					return true;
+				} else {
+					console.log('Please provide the guidelines to contribute with the project:');
+				}
 			}
 		},
 		{
@@ -116,6 +137,13 @@ Please answer the following questions
 					return true;
 				} else {
 					return false;
+				}
+			},
+			validate: testInstructionsInput => {
+				if (testInstructionsInput) {
+					return true;
+				} else {
+					console.log('Please provide the testing instructions for your project:');
 				}
 			}
 		},
@@ -154,6 +182,13 @@ Please answer the following questions
 				} else {
 					return false;
 				}
+			},
+			validate: emailInput => {
+				if (emailInput) {
+					return true;
+				} else {
+					console.log('Please enter your email address:');
+				}
 			}
 		},
 		{
@@ -171,6 +206,13 @@ Please answer the following questions
 					return true;
 				} else {
 					return false;
+				}
+			},
+			validate: referenceInput => {
+				if (referenceInput) {
+					return true;
+				} else {
+					console.log('Please provide your references:');
 				}
 			}
 		}

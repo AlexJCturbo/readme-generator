@@ -2,27 +2,36 @@
 // If there is no license, return an empty string
 
 module.exports = readmeInput => {
-	const {license} = readmeInput;
+
+  if (readmeInput.license === 'MIT') {
+    console.log('[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)')
+    return;
+  } else if (readmeInput.license === 'ISC') {
+    console.log('[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)')
+    return;
+  }
 }
 
-function renderLicenseBadge(license) {}
+//'MIT', 'ISC', 'GNU GPLv3', 'Apache License 2.0', 'Mozilla Public License 2.0', 'No License'
+
+// function renderLicenseBadge(license) {}
 
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
+// // TODO: Create a function that returns the license link
+// // If there is no license, return an empty string
+// function renderLicenseLink(license) {}
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+// // TODO: Create a function that returns the license section of README
+// // If there is no license, return an empty string
+// function renderLicenseSection(license) {}
 
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
-`;
-}
+// // TODO: Create a function to generate markdown for README
+// function generateMarkdown(data) {
+//   return `# ${data.title}
+// `;
+// }
 
-module.exports = generateMarkdown;
+//module.exports = getMarkdown;
 
 
 
