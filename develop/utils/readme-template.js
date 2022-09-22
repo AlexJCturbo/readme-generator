@@ -42,7 +42,7 @@ ${testInstructions}
 ###### [Back to Index](#Table-of-Contents)
 
 ## Questions
-${email}
+Please, fee free to get in touch with me at ${email} to discuss any inquiries or suggestions for the project. I will be happy to connect with you!
 ###### [Back to Index](#Table-of-Contents)
 
 ## Links
