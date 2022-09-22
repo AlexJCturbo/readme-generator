@@ -30,7 +30,7 @@ THEN I am taken to the corresponding section of the README
 ```
 
 ## Code Description
-This project was coded using Node.js and JavaScript. The code consists pf an index file where the inquirer app is called to prompt all the questions, a readme-template file that holds the template for the README file and a generateMarkdown file that calls the badges for the different license options. The app is initialized with Node.js executing the index file. This file runs the code in a series of functions and promises which concludes writing a README file based on the user's responses.
+This project was produced using Node.js and JavaScript. The code consists of an index file where the inquirer app is called to prompt all the questions that is required for the README file, a readme-template file that holds the template for the README file and a generateMarkdown file that calls the badges for the different license options. The app is initialized with Node.js executing the index file. This file runs the code in a series of functions and promises which concludes writing a README file based on the user's responses.
 
 ## Links
 
