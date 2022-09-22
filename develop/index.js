@@ -1,31 +1,26 @@
 //TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-
 const fileTemplate = require('./utils/readme-template.js')
 
 //TODO: Create an array of questions for user input
-const questions = readmeInput => {
+const questions = () => {
 	console.log(`
+
+Welcome to the README generator app!
 	
-	Welcome to the README generator app!
-	
-	Instructions:
-	This app will allow you to create a professional README file for your project
-	You will be prompt a series of questions that will allow the app to create your README.
-	Once all the questions are answered, a README.md file will be created.
-	The location of the README file will be in the folder "dist".
-	
-	=====================================
-	Please answer the following questions
-	=====================================
+Instructions:
+This app will allow you to create a professional README file for your project
+You will be prompt a series of questions that will allow the app to create your README.
+Once all the questions are answered, a README.md file will be created.
+The location of the README file will be in the folder "dist".
+
+=====================================
+Please answer the following questions
+=====================================
 
 	`		
 	);
-
-	if (!readmeInput.readmeAnswers) {
-		readmeInput.readmeAnswers = [];
-	}
 
   return inquirer.prompt([
       {
@@ -164,17 +159,15 @@ const questions = readmeInput => {
   ])
 };
 
-
 //TODO: Create a function to write README file
-const writeToFile = readmeContent => {
-	return new Promise ((resolve, reject) => {
-		fs.writeFile('../dist/README.md', readmeContent, err => {
-			if (err) {
-				reject (err);
+const writeToFile = collectInput => {
+	return new Promise((resolve, reject) => {
+		fs.writeFile('../dist/README.md', collectInput, err => {
+			if (err){
+				reject(err);
 				return;
 			}
-
-			resolve({
+			resolve ({
 				ok: true,
 				message: 'File created!'
 			});
@@ -182,21 +175,73 @@ const writeToFile = readmeContent => {
 	});
 }
 
+// const writeToFile = readmeContent => {
+// 	return new Promise ((resolve, reject) => {
+// 		fs.writeFile('../dist/README.md', readmeContent, err => {
+// 			if (err) {
+// 				reject (err);
+// 				return;
+// 			}
+
+// 			resolve({
+// 				ok: true,
+// 				message: 'File created!'
+// 			});
+// 		});
+// 	});
+// }
+
 
 //TODO: Create a function to initialize app
 const init = () => {
-	questions()
-		// .then(licenseSelection => {
-    // return bringMarkdown(licenseSelection);
-  	// })
-		.then (readmeFile => {
-			return writeToFile(readmeFile);
-		})
-		.catch(err => {
-			console.log(err)
-		});
+	questions().then(function(readmeInput){
+		console.log(readmeInput);
+		
+		let collectInput = fileTemplate(readmeInput);
+		console.log(collectInput);
+		writeToFile(collectInput);
+
+		//readmeContent();
+	})
+// 		// .then(licenseSelection => {
+//     // return bringMarkdown(licenseSelection);
+//   	// })
+// 		.then (readmeFile => {
+// 			return writeToFile(readmeFile);
+// 		})
+// 		.catch(err => {
+// 			console.log(err)
+// 		});
 }
 
 
 //Function call to initialize app
 init();
+
+
+/*
+TEST
+let example = [
+	{
+		name: 'one',
+		type: 'input',
+		message: 'Input number 1:'
+	},
+	{
+		name: 'two',
+		type: 'input',
+		message: 'Input number 2'
+	}
+]
+
+inquirer.prompt(example).then(function(response) {
+	console.log(response);
+	
+	 var exampleContent = fileTemplate(response);
+	 console.log(exampleContent);
+		fs.writeFile("./ReadMe.md", exampleContent, function(err){
+				if (err) throw err
+				console.log("success");
+		});
+} );
+*/
