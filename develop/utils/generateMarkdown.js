@@ -1,5 +1,10 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
+
+module.exports = readmeInput => {
+	const {license} = readmeInput;
+}
+
 function renderLicenseBadge(license) {}
 
 

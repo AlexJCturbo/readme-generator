@@ -1,7 +1,7 @@
 //TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-const fileTemplate = require('./utils/readme-template.js')
+const fileTemplate = require('./utils/readme-template.js');
 
 //TODO: Create an array of questions for user input
 const questions = () => {
