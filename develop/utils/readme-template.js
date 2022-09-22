@@ -1,5 +1,5 @@
 //Packages needed for this application
-const getMarkdown = require('./generateMarkdown.js');
+const {selectedBadge, licenseDescription} = require('./generateMarkdown.js');
 
 //Create sections based on the user confirmations
 //Installation section
@@ -75,7 +75,7 @@ ${referencesText}
 };
 
 
-//Table of contents sections
+//Functions to display different sections in the table of contents
 const generateIndexInstall = indexInstall => {
 	if (!indexInstall) {
 		return '';
@@ -122,18 +122,33 @@ const generateIndexReference = indexReferences => {
 	return `- [References](#References)`;
 };
 
+//Function to add badges
+// const badgeMIT = licenseSelection => {
+// 	if (licenseSelection === 'MIT') {
+//     console.log('[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)')
+//     return;
+//   } else if (readmeInput === 'ISC') {
+//     console.log('[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)')
+//     return;
+//   }
+// }
 
-
-//module.exports = response => {
+//README template function
 module.exports = readmeInput => {
-	let selectedLicense = getMarkdown(readmeInput);
 
-	const {name, description, confirmInstallation, installation, confirmUsage, usage, confirmContribute, contribute, confirmTestInstructions, testInstructions, license, github, confirmEmail, email, confirmReference, reference} = readmeInput;
+	//Destructure input array
+	const {name, description, confirmInstallation, installation, confirmUsage, usage, confirmContribute, contribute, confirmTestInstructions, testInstructions, license, github, confirmEmail, email, confirmReference, reference, copyright} = readmeInput;
+
+	//Variable to get the license badges
+	let selectedLicense = selectedBadge(readmeInput.license);
+	console.log(selectedLicense);
+
+	let licenseTerms = licenseDescription(readmeInput.license);
+	console.log(licenseTerms);
 
 	return `
 # ${name}
 ${selectedLicense}
-
 
 ## Table of Contents
 - [Project Description](#Project-Description)
@@ -150,19 +165,14 @@ ${generateIndexReference(confirmReference)}
 
 - [License](#License)
 
-
 ## Project Description
 ${description}
 ###### [Back to Index](#Table-of-Contents)
 
 ${generateInstallation(installation)}
-
 ${generateUsage(usage)}
-
 ${generateContribute(contribute)}
-
 ${generateTesting(testInstructions)}
-
 ${generateQuestions(email)}
 
 ## Links
@@ -173,6 +183,7 @@ ${generateReferences(reference)}
 
 ## License
 ${license}
+${licenseTerms}
 ###### [Back to Index](#Table-of-Contents)
   `
 /*

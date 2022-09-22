@@ -1,9 +1,9 @@
-//TODO: Include packages needed for this application
+//Packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
 const fileTemplate = require('./utils/readme-template.js');
 
-//TODO: Create an array of questions for user input
+//Array of questions for user input
 const questions = () => {
 	console.log(`
 
@@ -151,7 +151,7 @@ Please answer the following questions
 			type: 'list',
 			name: 'license',
 			message: 'Choose a license for your open-source project.',
-			choices: ['MIT', 'ISC', 'GNU GPLv3', 'Apache License 2.0', 'Mozilla Public License 2.0', 'No License']
+			choices: ['MIT', 'ISC', 'Apache License 2.0', 'BSD 3-Clause License', 'GNU GPLv3', 'Mozilla Public License 2.0', 'No License']
 		},
 		{
 			type: 'input',
@@ -215,11 +215,23 @@ Please answer the following questions
 					console.log('Please provide your references:');
 				}
 			}
+		},
+		{
+			type: 'input',
+			name: 'copyright',
+			message: 'Provide the name or organization that holds the copyright of this program:',
+			when: ({license}) => {
+				if (license !== 'No License') {
+					return true;
+				} else {
+					return false;
+				}
+			}
 		}
   ])
 };
 
-//TODO: Create a function to write README file
+//Function to write README file
 const writeToFile = collectInput => {
 	return new Promise((resolve, reject) => {
 		fs.writeFile('../dist/README.md', collectInput, err => {
@@ -235,24 +247,7 @@ const writeToFile = collectInput => {
 	});
 }
 
-// const writeToFile = readmeContent => {
-// 	return new Promise ((resolve, reject) => {
-// 		fs.writeFile('../dist/README.md', readmeContent, err => {
-// 			if (err) {
-// 				reject (err);
-// 				return;
-// 			}
-
-// 			resolve({
-// 				ok: true,
-// 				message: 'File created!'
-// 			});
-// 		});
-// 	});
-// }
-
-
-//TODO: Create a function to initialize app
+//Function to initialize app
 const init = () => {
 	questions().then(function(readmeInput){
 		console.log(readmeInput);
@@ -260,23 +255,13 @@ const init = () => {
 		let collectInput = fileTemplate(readmeInput);
 		console.log(collectInput);
 		writeToFile(collectInput);
-
-		//readmeContent();
 	})
-// 		// .then(licenseSelection => {
-//     // return bringMarkdown(licenseSelection);
-//   	// })
-// 		.then (readmeFile => {
-// 			return writeToFile(readmeFile);
-// 		})
-// 		.catch(err => {
-// 			console.log(err)
-// 		});
 }
 
-
-//Function call to initialize app
+//Call function to initialize app
 init();
+
+
 
 
 /*
