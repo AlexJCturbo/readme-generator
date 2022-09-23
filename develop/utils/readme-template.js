@@ -1,5 +1,5 @@
 //Packages needed for this application
-const {selectedBadge, licenseDescription} = require('./generateMarkdown.js');
+const {selectedBadge, copyrightInfo, licenseDescription} = require('./generateMarkdown.js');
 
 //Create sections based on the user confirmations
 //Installation section
@@ -75,6 +75,16 @@ ${referencesText}
 };
 
 
+//Function to add copyrights owner
+const copyrightHolder = copyrightOwner => {
+	if (!copyrightOwner) {
+		return '';
+	}
+	return `${copyrightOwner}
+	`;
+};
+
+
 //Functions to display different sections in the table of contents
 const generateIndexInstall = indexInstall => {
 	if (!indexInstall) {
@@ -122,6 +132,7 @@ const generateIndexReference = indexReferences => {
 	return `- [References](#References)`;
 };
 
+
 //README template function
 module.exports = readmeInput => {
 
@@ -131,6 +142,9 @@ module.exports = readmeInput => {
 	//Variable to get the license badges
 	let selectedLicense = selectedBadge(readmeInput.license);
 	console.log(selectedLicense);
+
+	let licenseCopyrights = copyrightInfo(readmeInput.license)
+	console.log(licenseCopyrights)
 
 	let licenseTerms = licenseDescription(readmeInput.license);
 	console.log(licenseTerms);
@@ -172,16 +186,8 @@ ${generateReferences(reference)}
 
 ## License
 ${license}
+${licenseCopyrights} ${copyrightHolder(copyright)}
 ${licenseTerms}
 ###### [Back to Index](#Table-of-Contents)
   `
-/*
-TEST
-	`
-	# This is the TEST
-
-	## Here you see input ${response.one}
-	## Here you see input ${response.two}
-	`
-*/
 }

@@ -221,15 +221,20 @@ Please answer the following questions
 			name: 'copyright',
 			message: 'Provide the name or organization that holds the copyright of this program:',
 			when: ({license}) => {
-				if (license !== 'No License') {
+				if (license === 'MIT') {
+					return true;
+				} else if (license === 'ISC') {
+					return true;
+				} else if (license === 'BSD 3-Clause License') {
 					return true;
 				} else {
 					return false;
 				}
 			}
 		}
-  ])
+  ]);
 };
+
 
 //Function to write README file
 const writeToFile = collectInput => {
