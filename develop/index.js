@@ -260,33 +260,3 @@ const init = () => {
 
 //Call function to initialize app
 init();
-
-
-
-
-/*
-TEST
-let example = [
-	{
-		name: 'one',
-		type: 'input',
-		message: 'Input number 1:'
-	},
-	{
-		name: 'two',
-		type: 'input',
-		message: 'Input number 2'
-	}
-]
-
-inquirer.prompt(example).then(function(response) {
-	console.log(response);
-	
-	 var exampleContent = fileTemplate(response);
-	 console.log(exampleContent);
-		fs.writeFile("./ReadMe.md", exampleContent, function(err){
-				if (err) throw err
-				console.log("success");
-		});
-} );
-*/
