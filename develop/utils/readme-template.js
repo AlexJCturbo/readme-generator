@@ -122,17 +122,6 @@ const generateIndexReference = indexReferences => {
 	return `- [References](#References)`;
 };
 
-//Function to add badges
-// const badgeMIT = licenseSelection => {
-// 	if (licenseSelection === 'MIT') {
-//     console.log('[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)')
-//     return;
-//   } else if (readmeInput === 'ISC') {
-//     console.log('[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)')
-//     return;
-//   }
-// }
-
 //README template function
 module.exports = readmeInput => {
 
