@@ -137,7 +137,7 @@ const generateIndexReference = indexReferences => {
 module.exports = readmeInput => {
 
 	//Destructure input array
-	const {name, description, confirmInstallation, installation, confirmUsage, usage, confirmContribute, contribute, confirmTestInstructions, testInstructions, license, github, confirmEmail, email, confirmReference, reference, copyright} = readmeInput;
+	const {name, description, confirmInstallation, installation, confirmUsage, usage, confirmContribute, contribute, confirmTestInstructions, testInstructions, license, github, githubUserName, confirmEmail, email, confirmReference, reference, copyright} = readmeInput;
 
 	//Variable to get the license badges
 	let selectedLicense = selectedBadge(readmeInput.license);
@@ -180,6 +180,8 @@ ${generateQuestions(email)}
 
 ## Links
 [Application Repository](${github})
+
+[GitHub Profile](https://github.com/${githubUserName})
 ###### [Back to Index](#Table-of-Contents)
 
 ${generateReferences(reference)}
@@ -188,6 +190,12 @@ ${generateReferences(reference)}
 ${license}
 ${licenseCopyrights} ${copyrightHolder(copyright)}
 ${licenseTerms}
+###### [Back to Index](#Table-of-Contents)
+
+
+
+### Walkthrough Video
+The following [walkthrough video](https://drive.google.com/file/d/1ZsagvFVtdqMSQjnsMuUo746Zyt6R6X0c/view) demonstrates the functionality of the README generator.
 ###### [Back to Index](#Table-of-Contents)
   `
 }

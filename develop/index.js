@@ -167,6 +167,19 @@ Please answer the following questions
 			}
 		},
 		{
+			type: 'input',
+			name: 'githubUserName',
+			message: 'Enter your GitHub user name (required):',
+			validate: githubInput => {
+				if (githubInput) {
+					return true;
+				} else {
+					console.log('Please enter your GitHub user name:');
+					return false;
+				}
+			}
+		},
+		{
 			type: 'confirm',
 			name: 'confirmEmail',
 			message: 'Would you like to provide an email address to reach you with additional questions?',
