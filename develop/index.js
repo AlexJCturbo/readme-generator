@@ -8,7 +8,7 @@ const questions = () => {
 	console.log(`
 
 Welcome to the README generator app!
-	
+
 Instructions:
 This app will allow you to create a professional README file for your project
 You will be prompt a series of questions that will allow the app to create your README.
@@ -19,7 +19,7 @@ The location of the README file will be in the folder "dist".
 Please answer the following questions
 =====================================
 
-	`		
+	`
 	);
 
   return inquirer.prompt([

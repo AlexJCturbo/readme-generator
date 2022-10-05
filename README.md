@@ -21,6 +21,8 @@
 
 - [License](#License)
 
+- [Walkthrough Video](#Walkthrough-Video)
+
 ## Project Description
 This project uses JavaScript and Node.js to create an application that generates a professional README file based on the user's input. The code consists of an index.js file where the inquirer app is called to prompt all the questions that is required for the README file, a readme-template file that holds the template for the README file and a generateMarkdown file that calls the badges for the different license options. The app is initialized with Node.js executing the index file. This file runs the code in a series of functions and promises which concludes writing a README file based on the user's responses.
 ###### [Back to Index](#Table-of-Contents)
@@ -52,14 +54,14 @@ Please, fee free to get in touch with me at jaimes.ac.5@gmail.com to discuss any
 	
 
 ## Links
-[Application Repository](https://github.com/AlexJCturbo/readme-generator)
-
-[GitHub Profile](https://github.com/AlexJCturbo)
+- [Application Repository](https://github.com/AlexJCturbo/readme-generator)
+- [GitHub Profile](https://github.com/AlexJCturbo)
 ###### [Back to Index](#Table-of-Contents)
 
 
 ## References
-[Node.js](https://nodejs.org/en/) and [npm inquirer](https://www.npmjs.com/package/inquirer)
+- [Node.js](https://nodejs.org/en/) 
+- [npm inquirer](https://www.npmjs.com/package/inquirer)
 ###### [Back to Index](#Table-of-Contents)
 	
 
@@ -75,7 +77,7 @@ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH RE
 
 
 
-### Walkthrough Video
+## Walkthrough Video
 The following [walkthrough video](https://drive.google.com/file/d/1ZsagvFVtdqMSQjnsMuUo746Zyt6R6X0c/view) demonstrates the functionality of the README generator.
 ###### [Back to Index](#Table-of-Contents)
   
