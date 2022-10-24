@@ -76,7 +76,6 @@ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH RE
 ###### [Back to Index](#Table-of-Contents)
 
 
-
 ## Walkthrough Video
 The following [walkthrough video](https://drive.google.com/file/d/12WYQmfUDl75wK0ZjXyJv6i11grziY4MS/view?usp=sharing) demonstrates the functionality of the README generator.
 ###### [Back to Index](#Table-of-Contents)
